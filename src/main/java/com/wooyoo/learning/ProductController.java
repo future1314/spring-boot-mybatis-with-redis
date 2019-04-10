@@ -3,6 +3,7 @@ package com.wooyoo.learning;
 import com.wooyoo.learning.dao.domain.Product;
 import com.wooyoo.learning.dao.mapper.ProductMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -47,4 +48,46 @@ public class ProductController {
         System.out.println(product);
         return product;
     }
+
+
+    @RequestMapping
+    public int add(int pNum) {
+        Product product = new Product();
+        if (product == null) {
+            throw new ProductNotFoundException(111);
+        }
+        for (int i = 0; i <pNum ; i++) {
+            product.setId(200-10*i);
+            product.setName("xxx-"+i);
+            product.setPrice(200-10*i);
+            productMapper.insert(product);
+        }
+        return pNum;
+    }
+
+    @Transactional
+    @PostMapping
+    public Object transaction(long pid){
+//      Product product = productMapper.select(pid);
+        int result=productMapper.deleteById(pid);
+        if (result != 0) {
+            throw new RuntimeException("运行时异常...");//会回滚
+        }
+        System.out.println(result);
+        return new Product();
+    }
+
+    @Transactional
+    @PostMapping(value="/pid")
+    public Object transException(long pid) throws Exception{
+//      Product product = productMapper.select(pid);
+        int result=productMapper.deleteById(pid);
+        if (result != 0) {
+            throw new Exception("非运行时异常...");//不回滚
+        }
+        System.out.println(result);
+        return new Product();
+    }
+
+
 }

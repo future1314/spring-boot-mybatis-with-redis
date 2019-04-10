@@ -11,6 +11,13 @@
         SELECT * FROM products WHERE id = #{id} LIMIT 1
     </select>
 
+    <insert id="insert" parameterType="Product">
+        insert into products values(#{id},#{name},#{price})
+    </insert>
+    <delete id="deleteById" >
+        delete from products where id=#{id}
+    </delete>
+
     <update id="update" parameterType="Product" flushCache="true">
         UPDATE products SET name = #{name}, price = #{price} WHERE id = #{id} LIMIT 1
     </update>
