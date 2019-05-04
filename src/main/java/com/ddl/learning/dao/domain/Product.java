@@ -8,9 +8,9 @@ public class Product implements Serializable {
     private static final long serialVersionUID = 1435515995276255188L;
 
     private long id;
-    @NotBlank(message = "name 不能为空")
+    @NotBlank(message = "name can't be null")
     private String name;
-    @NotNull(message = "price 不能为空")
+    @NotNull(message = "price 不能为空")//汉字乱码怎么处理呢
     private long price;
 
     public long getId() {

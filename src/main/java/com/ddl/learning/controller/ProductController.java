@@ -6,6 +6,7 @@ import com.ddl.learning.dao.domain.Product;
 import com.ddl.learning.dao.mapper.ProductMapper;
 import com.ddl.learning.util.AjaxJson;
 import com.ddl.learning.util.Constants;
+import com.ddl.learning.util.ValidatorUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
@@ -43,6 +44,23 @@ public class ProductController {
 //        if(newProduct==null){
 //            return new AjaxJson(Constants.failCode,Constants.failMsg,null);
 //        }
+        Long productId=newProduct.getId();
+        Product product = productMapper.select(productId);
+        if (product == null) {
+            throw new ProductNotFoundException(productId);
+        }
+        product.setName(newProduct.getName());
+        product.setPrice(newProduct.getPrice());
+        productMapper.update(product);
+        System.out.println(JSONObject.toJSONString(product));
+        return new AjaxJson(Constants.successCode,Constants.successMsg,product);
+    }
+
+    @PostMapping(value="update",consumes = "application/json")
+    public AjaxJson updateProductInfo2 (
+            @RequestBody
+                    Product newProduct) throws Exception{
+        ValidatorUtil.validate(newProduct);//
         Long productId=newProduct.getId();
         Product product = productMapper.select(productId);
         if (product == null) {
