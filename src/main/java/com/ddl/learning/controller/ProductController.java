@@ -56,11 +56,12 @@ public class ProductController {
     }
 
 
-    @RequestMapping
+    @PostMapping(value = "/add",consumes = "application/x-www-form-urlencoded")
     public AjaxJson add(int pNum) {
         Product product = new Product();
-        if (product == null) {
-            throw new ProductNotFoundException(111);
+        if (pNum < 1) {
+            //throw new ProductNotFoundException(111);
+            return new AjaxJson(Constants.failCode,Constants.failMsg,null);
         }
         for (int i = 0; i <pNum ; i++) {
             product.setId(2000-100*i);
