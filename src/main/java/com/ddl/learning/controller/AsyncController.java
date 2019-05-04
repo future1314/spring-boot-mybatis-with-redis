@@ -55,5 +55,5 @@ public class AsyncController {
         log.info("异步方法用时：{}", asyncTime - syncTime);
         log.info("方法执行完成：{}!",asyncTime);
         return "async!!!";
-    }
+    }//https://blog.lqdev.cn/2018/08/17/springboot/chapter-twenty-one/
 }

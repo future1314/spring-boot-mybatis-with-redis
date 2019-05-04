@@ -25,7 +25,7 @@ public class MyExceptionHandler {
         public Map<String, Object> handleException(Exception exception) {
             Map<String, Object> data = new HashMap<String, Object>();
             data.put("msg", exception.getMessage());
-            data.put("cause", exception.getCause());
+            data.put("cause", exception.getCause());//获取不到吗？
             //data.put("msg", runtimeException.sta);
             return data;
         }
@@ -38,5 +38,5 @@ public class MyExceptionHandler {
             data.put("cause", exception.getCause());
             //data.put("msg", runtimeException.sta);
             return data;
-        }
+        }//
 }
