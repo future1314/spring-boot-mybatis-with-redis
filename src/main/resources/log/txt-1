@@ -9,3 +9,11 @@
 
 
 
+{
+    "msg": "No bean named 'asyncPoolTaskExecutor' available: No matching Executor bean found for qualifier 'asyncPoolTaskExecutor' - neither qualifier match nor bean name match!"
+}
+
+{
+    "msg": "org.springframework.util.concurrent.ListenableFutureTask cannot be cast to org.springframework.scheduling.annotation.AsyncResult"
+}
+
