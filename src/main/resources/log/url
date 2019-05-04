@@ -1,0 +1,43 @@
+http://127.0.0.1:9999/push?code=oKong&message=趔趄的猿
+http://127.0.0.1:9999/push?code=oKong&message=趔趄的猿
+
+2019-05-04 18:52:07.583  INFO 12892 --- [nio-9999-exec-6] com.ddl.learning.config.CustomLister     : 监听器：初始化
+2019-05-04 18:52:07.583  INFO 12892 --- [nio-9999-exec-6] com.ddl.learning.config.CustomFilter     : doFilter 请求处理
+2019-05-04 18:52:07.584  INFO 12892 --- [nio-9999-exec-6] c.d.l.config.CustomHandlerInterceptor    : 1-preHandle:请求前调用
+2019-05-04 18:52:07.584  INFO 12892 --- [nio-9999-exec-6] com.ddl.learning.aop.LogAspect           : 开始计时: 2019-05-04 18:52:584  URI: /push
+2019-05-04 18:52:07.584  INFO 12892 --- [nio-9999-exec-6] com.ddl.learning.aop.LogAspect           : 请求方法：push, 请求参数: ["oKong","趔趄的猿"]
+2019-05-04 18:52:07.585  INFO 12892 --- [nio-9999-exec-6] com.ddl.learning.aop.LogAspect           : 请求ip：192.168.1.2
+2019-05-04 18:52:07.585  INFO 12892 --- [nio-9999-exec-6] c.d.learning.controller.EventController  : 发布applicationEvent事件:oKong,趔趄的猿
+2019-05-04 18:52:07.585  INFO 12892 --- [nio-9999-exec-6] c.d.learning.event.EventListenerConfig   : 事件：com.ddl.learning.event.CustomEvent[source=com.ddl.learning.controller.EventController@667bbe24]
+2019-05-04 18:52:07.585  INFO 12892 --- [nio-9999-exec-6] c.d.learning.event.EventListenerConfig   : 监听到CustomEvent事件，消息为：MessageEntity(message=趔趄的猿, code=oKong), 发布时间：1556967127585
+2019-05-04 18:52:07.586  INFO 12892 --- [nio-9999-exec-6] c.d.learning.event.EventListenerConfig   : 监听到code为'oKong'的CustomEvent事件，消息为：MessageEntity(message=趔趄的猿, code=oKong), 发布时间：1556967127585
+2019-05-04 18:52:07.586  INFO 12892 --- [nio-9999-exec-6] com.ddl.learning.aop.LogAspect           : log注解描述：
+2019-05-04 18:52:07.586  INFO 12892 --- [nio-9999-exec-6] com.ddl.learning.aop.LogAspect           : 结束计时: 2019-05-04 18:52:586,  URI: /push,耗时：2
+2019-05-04 18:52:07.587  INFO 12892 --- [nio-9999-exec-6] c.d.l.config.CustomHandlerInterceptor    : 2-postHandle:请求后调用
+2019-05-04 18:52:07.587  INFO 12892 --- [nio-9999-exec-6] c.d.l.config.CustomHandlerInterceptor    : 3-afterCompletion:请求调用完成后回调方法，即在视图渲染完成后回调
+2019-05-04 18:52:07.587  INFO 12892 --- [nio-9999-exec-6] c.d.learning.event.EventListenerConfig   : 事件：ServletRequestHandledEvent: url=[/push]; client=[127.0.0.1]; method=[GET]; servlet=[dispatcherServlet]; session=[null]; user=[null]; time=[4ms]; status=[OK]
+2019-05-04 18:52:07.587  INFO 12892 --- [nio-9999-exec-6] com.ddl.learning.config.CustomLister     : 监听器：销毁
+
+-----------------------------------------------------
+
+http://127.0.0.1:9999/push?code=lqdev&message=趔趄的猿
+http://127.0.0.1:9999/push?code=lqdev&message=趔趄的猿
+
+2019-05-04 18:51:42.066  INFO 12892 --- [nio-9999-exec-5] com.ddl.learning.config.CustomLister     : 监听器：初始化
+2019-05-04 18:51:42.066  INFO 12892 --- [nio-9999-exec-5] com.ddl.learning.config.CustomFilter     : doFilter 请求处理
+2019-05-04 18:51:42.067  INFO 12892 --- [nio-9999-exec-5] c.d.l.config.CustomHandlerInterceptor    : 1-preHandle:请求前调用
+2019-05-04 18:51:42.067  INFO 12892 --- [nio-9999-exec-5] com.ddl.learning.aop.LogAspect           : 开始计时: 2019-05-04 18:51:067  URI: /push
+2019-05-04 18:51:42.067  INFO 12892 --- [nio-9999-exec-5] com.ddl.learning.aop.LogAspect           : 请求方法：push, 请求参数: ["lqdev","趔趄的猿"]
+2019-05-04 18:51:42.326  INFO 12892 --- [nio-9999-exec-5] com.ddl.learning.aop.LogAspect           : 请求ip：192.168.1.2
+2019-05-04 18:51:42.326  INFO 12892 --- [nio-9999-exec-5] c.d.learning.controller.EventController  : 发布applicationEvent事件:lqdev,趔趄的猿
+2019-05-04 18:51:42.326  INFO 12892 --- [nio-9999-exec-5] c.d.learning.event.EventListenerConfig   : 事件：com.ddl.learning.event.CustomEvent[source=com.ddl.learning.controller.EventController@667bbe24]
+2019-05-04 18:51:42.326  INFO 12892 --- [nio-9999-exec-5] c.d.learning.event.EventListenerConfig   : 监听到CustomEvent事件，消息为：MessageEntity(message=趔趄的猿, code=lqdev), 发布时间：1556967102326
+2019-05-04 18:51:42.327  INFO 12892 --- [nio-9999-exec-5] com.ddl.learning.aop.LogAspect           : log注解描述：
+2019-05-04 18:51:42.327  INFO 12892 --- [nio-9999-exec-5] com.ddl.learning.aop.LogAspect           : 结束计时: 2019-05-04 18:51:327,  URI: /push,耗时：260
+2019-05-04 18:51:42.328  INFO 12892 --- [nio-9999-exec-5] c.d.l.config.CustomHandlerInterceptor    : 2-postHandle:请求后调用
+2019-05-04 18:51:42.329  INFO 12892 --- [nio-9999-exec-5] c.d.l.config.CustomHandlerInterceptor    : 3-afterCompletion:请求调用完成后回调方法，即在视图渲染完成后回调
+2019-05-04 18:51:42.329  INFO 12892 --- [nio-9999-exec-5] c.d.learning.event.EventListenerConfig   : 事件：ServletRequestHandledEvent: url=[/push]; client=[127.0.0.1]; method=[GET]; servlet=[dispatcherServlet]; session=[null]; user=[null]; time=[263ms]; status=[OK]
+2019-05-04 18:51:42.329  INFO 12892 --- [nio-9999-exec-5] com.ddl.learning.config.CustomLister     : 监听器：销毁
+
+
+
