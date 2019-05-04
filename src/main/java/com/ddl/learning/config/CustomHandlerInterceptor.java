@@ -28,7 +28,7 @@ public class CustomHandlerInterceptor implements HandlerInterceptor {
     @Override
     public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex)
             throws Exception {
-        log.info("--afterCompletion:请求调用完成后回调方法，即在视图渲染完成后回调");
+        log.info("3-afterCompletion:请求调用完成后回调方法，即在视图渲染完成后回调");
 
     }//https://blog.lqdev.cn/2018/07/19/springboot/chapter-seven/
 
