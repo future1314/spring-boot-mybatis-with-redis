@@ -1,5 +1,7 @@
-package com.wooyoo.learning;
+package com.wooyoo.learning.controller;
 
+import com.alibaba.fastjson.JSONObject;
+import com.wooyoo.learning.exception.ProductNotFoundException;
 import com.wooyoo.learning.dao.domain.Product;
 import com.wooyoo.learning.dao.mapper.ProductMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -45,7 +47,7 @@ public class ProductController {
         product.setName(newProduct.getName());
         product.setPrice(newProduct.getPrice());
         productMapper.update(product);
-        System.out.println(product);
+        System.out.println(JSONObject.toJSONString(product));
         return product;
     }
 
@@ -57,9 +59,9 @@ public class ProductController {
             throw new ProductNotFoundException(111);
         }
         for (int i = 0; i <pNum ; i++) {
-            product.setId(200-10*i);
-            product.setName("xxx-"+i);
-            product.setPrice(200-10*i);
+            product.setId(2000-100*i);
+            product.setName("yyyy-"+i);
+            product.setPrice(2000-100*i);
             productMapper.insert(product);
         }
         return pNum;
