@@ -1,9 +1,9 @@
-package com.wooyoo.learning.controller;
+package com.ddl.learning.controller;
 
 import com.alibaba.fastjson.JSONObject;
-import com.wooyoo.learning.exception.ProductNotFoundException;
-import com.wooyoo.learning.dao.domain.Product;
-import com.wooyoo.learning.dao.mapper.ProductMapper;
+import com.ddl.learning.exception.ProductNotFoundException;
+import com.ddl.learning.dao.domain.Product;
+import com.ddl.learning.dao.mapper.ProductMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
@@ -83,7 +83,7 @@ public class ProductController {
     @PostMapping(value="/pid")
     public Object transException(long pid) throws Exception{
 //      Product product = productMapper.select(pid);
-        int result=productMapper.deleteById(pid);
+        int result=productMapper.deleteById(pid);//删除不存在的id 不报错。。
         if (result != 0) {
             throw new Exception("非运行时异常...");//不回滚
         }

@@ -1,4 +1,4 @@
-package com.wooyoo.learning.util;
+package com.ddl.learning.util;
 
 import org.apache.ibatis.cache.Cache;
 import org.slf4j.Logger;

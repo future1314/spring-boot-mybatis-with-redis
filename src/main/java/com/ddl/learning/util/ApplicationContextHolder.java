@@ -1,4 +1,4 @@
-package com.wooyoo.learning.util;
+package com.ddl.learning.util;
 
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;

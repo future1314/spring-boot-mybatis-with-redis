@@ -1,4 +1,4 @@
-package com.wooyoo.learning.exception;
+package com.ddl.learning.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;

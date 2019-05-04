@@ -3,7 +3,7 @@
     "status": 500,
     "error": "Internal Server Error",
     "exception": "org.springframework.dao.DuplicateKeyException",
-    "message": "\n### Error updating database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Duplicate entry '2000' for key 'PRIMARY'\n### The error may involve com.wooyoo.learning.dao.mapper.ProductMapper.insert-Inline\n### The error occurred while setting parameters\n### SQL: insert into products values(?,?,?)\n### Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Duplicate entry '2000' for key 'PRIMARY'\n; SQL []; Duplicate entry '2000' for key 'PRIMARY'; nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Duplicate entry '2000' for key 'PRIMARY'",
+    "message": "\n### Error updating database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Duplicate entry '2000' for key 'PRIMARY'\n### The error may involve ProductMapper.insert-Inline\n### The error occurred while setting parameters\n### SQL: insert into products values(?,?,?)\n### Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Duplicate entry '2000' for key 'PRIMARY'\n; SQL []; Duplicate entry '2000' for key 'PRIMARY'; nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Duplicate entry '2000' for key 'PRIMARY'",
     "path": "/product"
 }
 

@@ -1,4 +1,4 @@
-package com.wooyoo.learning.dao.domain;
+package com.ddl.learning.dao.domain;
 
 import java.io.Serializable;
 

@@ -1,4 +1,4 @@
-package com.wooyoo.learning.exception;
+package com.ddl.learning.exception;
 
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -18,7 +18,7 @@ public class MyExceptionHandler {
             return data;
         }
 
-        @ExceptionHandler(value=Exception.class)
+        @ExceptionHandler(value=Exception.class)//上下顺序 有关系没？
         @ResponseBody
         public Map<String, String> handleException(RuntimeException runtimeException) {
             Map<String, String> data = new HashMap<String, String>();

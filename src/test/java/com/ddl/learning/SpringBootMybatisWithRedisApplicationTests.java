@@ -1,6 +1,6 @@
-package com.wooyoo.learning;
+package com.ddl.learning;
 
-import com.wooyoo.learning.dao.domain.Product;
+import com.ddl.learning.dao.domain.Product;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

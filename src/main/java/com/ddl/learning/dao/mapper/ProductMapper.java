@@ -1,6 +1,6 @@
-package com.wooyoo.learning.dao.mapper;
+package com.ddl.learning.dao.mapper;
 
-import com.wooyoo.learning.dao.domain.Product;
+import com.ddl.learning.dao.domain.Product;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
