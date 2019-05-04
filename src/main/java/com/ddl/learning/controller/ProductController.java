@@ -4,6 +4,8 @@ import com.alibaba.fastjson.JSONObject;
 import com.ddl.learning.exception.ProductNotFoundException;
 import com.ddl.learning.dao.domain.Product;
 import com.ddl.learning.dao.mapper.ProductMapper;
+import com.ddl.learning.util.AjaxJson;
+import com.ddl.learning.util.Constants;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
@@ -31,13 +33,13 @@ public class ProductController {
      * }
      */
     @PostMapping(consumes = "application/json")
-    public Product updateProductInfo(
+    public AjaxJson updateProductInfo(
             //@PathVariable("id")
               //      Long productId,
             @RequestBody
                     Product newProduct) {
         if(newProduct==null){
-            return new Product();
+            return new AjaxJson(Constants.failCode,Constants.failMsg,null);
         }
         Long productId=newProduct.getId();
         Product product = productMapper.select(productId);
@@ -48,12 +50,12 @@ public class ProductController {
         product.setPrice(newProduct.getPrice());
         productMapper.update(product);
         System.out.println(JSONObject.toJSONString(product));
-        return product;
+        return new AjaxJson(Constants.successCode,Constants.successMsg,product);
     }
 
 
     @RequestMapping
-    public int add(int pNum) {
+    public AjaxJson add(int pNum) {
         Product product = new Product();
         if (product == null) {
             throw new ProductNotFoundException(111);
@@ -64,7 +66,7 @@ public class ProductController {
             product.setPrice(2000-100*i);
             productMapper.insert(product);
         }
-        return pNum;
+        return new AjaxJson(Constants.successCode,Constants.successMsg,null);
     }
 
     @Transactional
@@ -76,7 +78,7 @@ public class ProductController {
             throw new RuntimeException("运行时异常...");//会回滚
         }
         System.out.println(result);
-        return new Product();
+        return new AjaxJson(Constants.successCode,Constants.successMsg,null);
     }
 
     @Transactional
@@ -88,7 +90,7 @@ public class ProductController {
             throw new Exception("非运行时异常...");///不回滚
         }
         System.out.println(result);
-        return new Product();
+        return new AjaxJson(Constants.successCode,Constants.successMsg,null);
     }
 
 
