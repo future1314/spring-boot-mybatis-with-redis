@@ -20,6 +20,9 @@ public class ProductController {
     @Autowired
     private ProductMapper productMapper;
 
+//    @Autowired
+//    private GirlFriendService girlFriendService;
+
     @GetMapping("/{id}")
     public Product getProductInfo(
             @PathVariable("id")
@@ -138,6 +141,19 @@ public class ProductController {
     public String notAopDemo(String hello) {
         return "此方法不记录日志，请求参数为：" + hello;
     }
+
+//    /**
+//     * 不拦截日志示例
+//     *
+//     * @param sayhi
+//     * @return
+//     */
+//    @RequestMapping("/sayhi")
+//    @Log(ignore = true)
+//    public String hi() {
+//        GirlFriendService girlFriendService;
+//        return "此方法不记录日志，请求参数为：";
+//    }
 
 
 }
