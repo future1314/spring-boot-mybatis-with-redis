@@ -10,6 +10,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
+
 @RestController
 @RequestMapping("/product")
 public class ProductController {
@@ -36,11 +38,11 @@ public class ProductController {
     public AjaxJson updateProductInfo(
             //@PathVariable("id")
               //      Long productId,
-            @RequestBody
+            @RequestBody @Valid
                     Product newProduct) {
-        if(newProduct==null){
-            return new AjaxJson(Constants.failCode,Constants.failMsg,null);
-        }
+//        if(newProduct==null){
+//            return new AjaxJson(Constants.failCode,Constants.failMsg,null);
+//        }
         Long productId=newProduct.getId();
         Product product = productMapper.select(productId);
         if (product == null) {

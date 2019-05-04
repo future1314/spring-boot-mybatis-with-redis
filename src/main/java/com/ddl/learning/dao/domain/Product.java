@@ -1,12 +1,16 @@
 package com.ddl.learning.dao.domain;
 
+import org.hibernate.validator.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 
 public class Product implements Serializable {
     private static final long serialVersionUID = 1435515995276255188L;
 
     private long id;
+    @NotBlank(message = "name 不能为空")
     private String name;
+    @NotNull(message = "price 不能为空")
     private long price;
 
     public long getId() {
