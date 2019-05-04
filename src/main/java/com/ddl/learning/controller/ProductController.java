@@ -85,7 +85,7 @@ public class ProductController {
 //      Product product = productMapper.select(pid);
         int result=productMapper.deleteById(pid);//删除不存在的id 不报错。。
         if (result != 0) {
-            throw new Exception("非运行时异常...");//不回滚
+            throw new Exception("非运行时异常...");///不回滚
         }
         System.out.println(result);
         return new Product();
